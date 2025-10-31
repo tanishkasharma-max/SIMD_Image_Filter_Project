@@ -6,13 +6,6 @@
 
 extern "C" {
 
-EMSCRIPTEN_KEEPALIVE
-void adjustBrightnessScalar(uint8_t *data, int length, int brightness) {
-    for (int i = 0; i < length; i++) {
-        int val = data[i] + brightness;
-        data[i] = std::min(255, std::max(0, val));
-    }
-}
 
 EMSCRIPTEN_KEEPALIVE
 void adjustBrightnessSIMD(uint8_t *data, int length, int brightness) {
