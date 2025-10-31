@@ -1,0 +1,29 @@
+{
+  "configurations": [
+    {
+      "name": "Mac",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "/opt/homebrew/opt/opencv/include/opencv4",
+        "${HOME}/emsdk/upstream/emscripten/system/include",
+        "${HOME}/emsdk/upstream/emscripten/cache/sysroot/include",
+        "${HOME}/emsdk/upstream/lib/clang/22/include",
+        "${HOME}/emsdk/upstream/emscripten/system/lib/libc/musl/include",
+        "${HOME}/emsdk/upstream/emscripten/system/include/compat"
+      ],
+      "defines": [
+        "__EMSCRIPTEN__",
+        "__wasm__",
+        "__wasm32__"
+      ],
+      "compilerPath": "${HOME}/emsdk/upstream/emscripten/emcc",
+      "cppStandard": "c++17",
+      "cStandard": "c17",
+      "intelliSenseMode": "linux-clang-x64",
+      "compilerArgs": [
+        "-msimd128"
+      ]
+    }
+  ],
+  "version": 4
+}

@@ -1,0 +1,1 @@
+/Users/tanishkasharma/emsdk/upstream/emscripten/em++  -O3 -msimd128 -s WASM=1 -s ALLOW_MEMORY_GROWTH=1 -s EXPORTED_FUNCTIONS='[_adjustBrightnessScalar,_adjustBrightnessSIMD]'          -s EXPORTED_RUNTIME_METHODS='[ccall,cwrap]' @CMakeFiles/simd_image_filter.dir/objects1.rsp -o simd_image_filter.js
