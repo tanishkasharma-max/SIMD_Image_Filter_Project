@@ -60,22 +60,7 @@ Common issues and fixes
 - Modularized glue (MODULARIZE=1)
   - index.html includes detection/factory logic. If your build uses MODULARIZE, ensure index.js factory is invoked or rebuild without MODULARIZE.
 
-Diagnostics (run in browser console after image loaded)
-```javascript
-console.log('Module._malloc:', typeof Module?._malloc);
-console.log('Module.ccall:', typeof Module?.ccall);
-console.log('HEAPU8 length:', Module?.HEAPU8?.length);
-console.log('adjustBrightnessSIMD:', typeof Module?._adjustBrightnessSIMD);
 
-// quick memory test
-const len = imgData.data.length;
-const ptr = Module._malloc(len);
-Module.HEAPU8.set(originalData, ptr);
-console.log('before', Array.from(Module.HEAPU8.subarray(ptr,8)));
-Module.ccall('adjustBrightnessSIMD','void',['number','number','number'],[ptr,len,40]);
-console.log('after', Array.from(Module.HEAPU8.subarray(ptr,8)));
-Module._free(ptr);
-```
 - If "before" and "after" equal, the function didn't run or was not exported.
 
 Performance / correctness notes
