@@ -83,7 +83,7 @@ Performance / correctness notes
 - Copying to/from wasm heap is necessary and dominates small images; for larger images SIMD shows benefits.
 - To reduce overhead, preallocate a single wasm buffer and reuse it instead of malloc/free per call.
 
-Scalar Js: 1.40 ms
+Scalar Js: 1.40 ms <br>
 WASM : 1.30 ms 
 
 
