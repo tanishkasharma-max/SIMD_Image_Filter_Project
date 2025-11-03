@@ -57,11 +57,8 @@ Common issues and fixes
 - `adjustBrightnessSIMD` has no effect
   - Ensure function exported (`EXPORTED_FUNCTIONS`) and compiled with `-msimd128`.
   - Verify browser supports WASM SIMD (modern Chrome/Edge/Firefox).
-- Modularized glue (MODULARIZE=1)
-  - index.html includes detection/factory logic. If your build uses MODULARIZE, ensure index.js factory is invoked or rebuild without MODULARIZE.
 
 
-- If "before" and "after" equal, the function didn't run or was not exported.
 
 Performance / correctness notes
 - SIMD processes 16 bytes at a time with saturating ops; tail bytes handled in scalar loop.
