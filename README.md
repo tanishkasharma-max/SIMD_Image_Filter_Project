@@ -66,7 +66,8 @@ Performance / correctness notes
 - To reduce overhead, preallocate a single wasm buffer and reuse it instead of malloc/free per call.
 
 Scalar Js: 2.50 ms <br>
-WASM : 1.40 ms 
+WASM : 1.40 ms     
+but these results varies sometimes WASM show more time then scalar.
 
 
 
