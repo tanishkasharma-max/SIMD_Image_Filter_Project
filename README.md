@@ -6,9 +6,9 @@ Repository layout
   - `adjustBrightnessSIMD(uint8_t*, int, int)` (uses `wasm_simd128.h`)
 - simd_image_filter.js / simd_image_filter.wasm — generated Emscripten outputs (must be built and placed next to index.html)
 - index.html — UI: image loader (scaled to 200×200), JS scalar path, WASM integration, diagnostics
-- CMakeLists.txt (optional) — project build config if using CMake/emcmake
 
-Why this design
+
+Design
 - WASM runs native-like code in browsers; SIMD processes 16 bytes per instruction to speed up pixel ops.
 - WASM uses its own linear memory (heap). To operate on image bytes you must copy data into the heap and pass a pointer to C/WASM.
 - Alpha handling: C code operates on raw bytes; index.html preserves alpha in JS to avoid visual artifacts.
